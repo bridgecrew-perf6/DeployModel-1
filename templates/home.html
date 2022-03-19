@@ -1,0 +1,149 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background: linear-gradient(
+        to bottom,
+        #B22234,
+        #B22234 50%,
+        #FFFFFF 50%,
+        #FFFFFF
+);
+background-size: 100% 25px;
+    }
+    form {
+        position: relative;
+        bottom: 20px;
+        font-size: large;
+        bottom: 2px;
+    }
+
+    div {
+        margin: auto;
+        position: relative;
+        height: 1200px;
+        width: 700px;
+        background-color: #3C3B6E ;
+    }
+    h1{
+        
+        text-align: center;
+        padding-top: 20px;
+        border: #FFFFFF;
+        border-radius: 2px;
+    }
+    input[type=text] {
+        float: right;
+        width: 60%;
+}
+    input[type=select]{
+        float: right;
+    }
+    select{
+        width: 61%;
+        float: right;
+    }
+    input[type=radio] {
+        margin-left: auto;
+    }
+    .tab1 { display: inline-block; margin-left: 130px;}
+    .tab2 { display: inline-block; margin-left: 40px;}
+    .tab3 { display: inline-block; margin-left: 130px;}
+    .tab4 { display: inline-block; margin-left: 100px;}
+    .tab5 { display: inline-block; margin-left: 81px;}
+    .tab6 { display: inline-block; margin-left: 58px;}
+    .tab7 { display: inline-block; margin-left: 123px;}
+    .tab8 { display: inline-block; margin-left: 123px;}
+    .tab9 { display: inline-block; margin-left: 140px;}
+    .tab10 { display: inline-block; margin-left: 160px;}
+    .tab11 { display: inline-block; margin-left: 146px;}
+    .tab12 { display: inline-block; margin-left: 127px;}
+    .tab13 { display: inline-block; margin-left: 300px;}
+    .tab14 { display: inline-block; margin-left: 400px;}
+    .tab15 { display: inline-block; margin-left: 500px;}
+    .tab16 { display: inline-block; margin-left: 600px;}
+
+    input[type=submit]{
+        position: relative;
+        left: 290px;
+        margin: auto;
+        background: #B22234;
+        color: white;
+        border-style: outset;
+        border-color: #B22234;
+        height: 50px;
+        width: 100px;
+        font: bold15px arial,sans-serif;
+        text-shadow: none;
+        text-align: center;
+        
+    }
+    .star{
+        color: #FFFFFF;
+    }
+</style>
+<body>
+
+    <div class="form-style">
+    <form action="{% url 'result' %}">
+        <h1><FONT COLOR= "#B22234"> <strong> H1-B Visa Approval Prediction </strong></h1></FONT> 
+        <span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;
+        </span> <br><br><br>
+
+        {% csrf_token %}
+        <FONT COLOR= "#FFFFFF">
+        Name : <span class="tab5"></span><span>&#9733;</span><input type="text" required name="Name"> <br><br>
+        Age : <span class="tab2"></span><span>&#9733;</span><span class="tab5"></span><span>&#9733;</span><input type="text" required name="Age"> <br><br>
+        Job Title : <span class="tab5"></span><span>&#9733;</span><input type="text" required name="Job Title"> <br><br>
+        SOC Code : <span class="tab10"></span><span>&#9733;</span><input type="text" required name="SOC Code"> <br><span class="tab1"></span><span class="tab13"></span><span>&#9733;</span><br>
+        NAICS Code : <span class="tab2"></span><span>&#9733;</span><input type="text" required name="NAICS Code"> <br><br>
+        Wage Rate : <span class="tab7"></span><span>&#9733;</span><input type="text" required name="Wage Rate"> <br><br>
+        <label for="wagelevel">Wage Level:<span class="tab2"></span><span>&#9733;</span></label>
+        <select name="Wagelevel" id="Wagelevel">
+        <option value="Level I">Level I</option>
+        <option value="Level II">Level II</option>
+        <option value="Level III">Level III</option>
+        <option value="Level IV">Level IV</option>
+        </select> <br><br>
+        <label for="statutary">Statutary Status:<span class="tab1"></span><span>&#9733;</span></label>
+        <select name="statutary" id="statutary">
+        <option value="Wage">Wage</option>
+        <option value="Degree">Degree</option>
+        <option value="Both">Both</option>
+        </select> <br><br>
+        <label for="place">Public Disclosure:<span class="tab2"></span><span>&#9733;</span></label>
+        <select name="Publicdis" id="Publicdis">
+        <option value="Place of Business">Place of Business</option>
+        <option value="Place of Employment">Place of Employment</option>
+        <option value="Both">Both</option>
+        </select> <br><br>
+        Total Workers : <span>&#9733;</span><span class="tab4"></span><span>&#9733;</span><input type="text" required name="Total Workers"> <br><br>
+        New Employment: <span class="tab1"></span><input type="radio" name="ne_yes_no" value="Yes" >Yes</input> &nbsp; <input type="radio" name="ne_yes_no" value="No">No<span class="tab13"></span><span>&#9733;</span></input> <br><br>
+        Change Previous Employment: <span class="tab2"></span><input type="radio" name="cpe_yes_no" value="Yes">Yes</input> &nbsp; <input type="radio" name="cpe_yes_no" value="No">No</span><span class="tab4"></span><span>&#9733;</span></input> <br><br>
+        Secondary Entity : <span class="tab3"></span><input type="radio" name="se_yes_no" value="Yes">Yes</input> &nbsp; <input type="radio" name="se_yes_no" value="No">No</input> <br><br>
+        Represented by Agent: <span class="tab4"></span><input type="radio" name="rba_yes_no"value="Yes" >Yes</input> &nbsp; <input type="radio" name="rba_yes_no" value="No">No<span class="tab2"></span><span>&#9733;</span></input> <br><span class="tab2"></span><span>&#9733;</span><br>
+        Continued Employment : <span class="tab5"></span><input type="radio" name="ce_yes_no" value="Yes">Yes</input> &nbsp; <input type="radio" name="ce_yes_no" value="No">No<span class="tab10"></span><span>&#9733;</span></input> <br><br>
+        New Concurrent Employer : <span class="tab6"></span><input type="radio" name="nce_yes_no" value="Yes" >Yes</input> &nbsp; <input type="radio" name="nce_yes_no" value="No">No<span class="tab2"></span><span>&#9733;</span></input> <br><br>
+        Change Employer : <span class="tab7"></span><input type="radio" name="ce2_yes_no" value="Yes">Yes</input> &nbsp; <input type="radio" name="ce2_yes_no" value="No">No<span class="tab1"></span><span>&#9733;</span></input> <br><br>
+        Amended Petition : <span class="tab8"></span><input type="radio" name="ap_yes_no" value="Yes">Yes</input> &nbsp; <input type="radio" name="ap_yes_no" value="No">No</span><span class="tab4"></span><span>&#9733;</span></input> <br><span class="tab2"></span><span>&#9733;</span><br>
+        H1B dependent : <span class="tab9"></span><input type="radio" name="hd_yes_no" value="Yes">Yes</input> &nbsp; <input type="radio" name="hd_yes_no" value="No">No</input> <br><span class="tab9"></span><span>&#9733;</span><span class="tab1"></span><span>&#9733;</span><br>
+        Support H1B: <span class="tab10"></span><input type="radio" name="sh_yes_no" value="Yes">Yes</input> &nbsp; <input type="radio" name="sh_yes_no" value="No">No<span class="tab1"></span><span class="tab4"></span><span>&#9733;</span></input> <br><span class="tab1"></span><span>&#9733;</span><br>
+        wilfull Violator: <span class="tab11"></span><input type="radio" name="wv_yes_no" value="Yes">Yes</input> &nbsp; <input type="radio" name="wv_yes_no" value="No" >No</input> <br><span class="tab4"></span><span>&#9733;</span><br>
+        Full time position: <span class="tab12"></span><input type="radio" name="ftp_yes_no" value="Yes">Yes</input> &nbsp; <input type="radio" name="ftp_yes_no" value="No">No<span class="tab4"></span><span>&#9733;</span></input> <br><br>
+        </FONT>
+    </label>
+
+        <input type="submit" name="Predict" value="Predict">
+    </form>
+</div>
+</body>
+</html>
